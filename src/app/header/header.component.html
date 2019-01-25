@@ -1,0 +1,48 @@
+<!--Navbar-->
+<mdb-navbar #nav SideClass="navbar navbar-expand-lg navbar-dark secondary-color-dark">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand>
+  <a class="navbar-brand float-left" href="home"> <i class="fas fa-home fa-2x"></i><span>  Home</span></a>
+  </mdb-navbar-brand>
+  
+  <links>
+  <!-- Links -->
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item dropdown" dropdown>
+      <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle " mdbWavesEffect>
+      <i class="fas fa-th fa-2x"></i></a>
+      <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary secondary-color-dark" role="menu">
+        <a class="dropdown-item " mdbWavesEffect href="home"><i class="fas fa-home fa-2x text-white"></i><span class="text-white"> Home</span></a> 
+        <a class="dropdown-item " mdbWavesEffect href="action"><i class="fas fa-info-circle fa-2x text-white"></i><span class="text-white"> Action</span></a>
+          <a class="dropdown-item " mdbWavesEffect href="trace"><i class="fas fa-code-branch fa-2x text-white"></i><span class="text-white"> Trace</span></a>
+          <a class="dropdown-item " mdbWavesEffect href="certification"><i class="fas fa-award fa-2x text-white"></i><span class="text-white"> Certification</span></a>
+          <a class="dropdown-item " mdbWavesEffect href="account-summary"><i class="fas fa-tachometer-alt fa-2x text-white"></i><span class="text-white"> Account Summary</span></a>
+          <a class="dropdown-item " mdbWavesEffect href="user-manager"><i class="fas fa-users fa-2x text-white"></i><span class="text-white"> User Manager</span></a>
+          <a class="dropdown-item " mdbWavesEffect href="data"><i class="fas fa-table fa-2x text-white"></i><span class="text-white"> Data</span></a>
+          <a class="dropdown-item " mdbWavesEffect href="onboarding"><i class="fas fa-rocket fa-2x text-white"></i><span class="text-white"> Onboarding</span></a>
+      </div>
+  </li>
+  
+  </ul>
+  <ul class="navbar-nav ">
+    <li class="nav-item dropdown" dropdown>
+      <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle " mdbWavesEffect>
+      <i class="fas fa-user-circle fa-2x"></i></a>
+      <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary secondary-color-dark" role="menu">
+          <a class="dropdown-item " mdbWavesEffect href="account"><i class="far fa-address-card fa-2x text-white"></i><span class="text-white"> Account</span></a>
+          <a class="dropdown-item " mdbWavesEffect href=""><i class="fas fa-sign-out-alt fa-2x text-white"></i><span class="text-white"> Sign Out</span></a>
+         
+      </div>
+  </li>
+  
+  </ul>
+  <!-- Links -->
+  
+  
+  <!-- Search form -->
+  </links>
+  <!-- Collapsible content -->
+  
+  </mdb-navbar>
+  <!--/.Navbar-->
