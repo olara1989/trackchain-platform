@@ -1,7 +1,5 @@
 <div style="height: 100vh">
   <div class="flex-center flex-column">
-   
-    
     <mdb-card >
       <!--Card content-->
       <mdb-card-body class="elegant-color px-lg-5 pt-2">
@@ -35,7 +33,7 @@
           <!-- Sign in button -->
           <a routerLink="/home" mdbBtn color="secondary" outline="true" rounded="true"  block="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect
             type="button">Sign in</a>
-         <div *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">{{message.text}}</div>
+       
           <!-- Register -->
           <p>Not a member?
             <a href="">Register</a>
