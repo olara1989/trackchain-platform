@@ -1,0 +1,252 @@
+<app-header></app-header>
+<!-- Section: Blog v.1 -->
+<section class="my-1">
+  <!-- Grid row -->
+  <div class="container elegant-color py-1" color="elegant-color">
+    <div class="row  m-2 mt-1">
+      <!-- Grid column -->
+      <div class="col-lg-1 cyan darken-3">
+        <!-- Featured image -->
+        <i class="fas fa-apple-alt fa-2x text-white m-2"></i>
+      </div>
+      <!-- Grid column -->
+      <!-- Grid column -->
+      <div class="col-lg-8 pt-3">
+        <!-- Category -->
+        <!-- Post title -->
+        <span class="align-bottom display-6"><strong>Fruit Nut Bar(11111111111111111111110000.0.23)</strong></span>
+        <span> &nbsp;&nbsp;{{typeRange}}</span>
+        <span> &nbsp;&nbsp;{{valRange}}</span>
+        <!-- Excerpt -->
+      </div>
+      <div class="col-lg-3">
+        <!-- Category -->
+        <!-- Post title -->
+        <button mdbBtn type="button" color="info" mdbWavesEffect><i class="fas fa-code-branch fa-2x text-white"></i>
+          Trace</button>
+        <!-- Excerpt -->
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-lg-12">
+        <ul class="stepper stepper-horizontal">
+          <!-- First Step -->
+          <li class="completed">
+            <a href="trace">
+              <span class="circle">ok</span>
+              <span class="label">Select a product</span>
+            </a>
+          </li>
+          <!-- Second Step -->
+          <li class="completed">
+            <a href="trace-step2">
+              <span class="circle"></span>
+              <span class="label">Refine with date or choose specifc lots, pallets or serial numbers</span>
+            </a>
+          </li>
+          <!-- Third Step -->
+          <li  [class]="comp">
+            <a href="trace-step3">
+              <span class="circle"></span>
+              <span class="label">{{step3}}</span>
+            </a>
+          </li>
+          <!-- Third Step -->
+          <li [class]="comp">
+            <a href="">
+              <span class="circle"></span>
+              <span class="label">{{step4}}</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="col-lg-4 text-center " [hidden]="hiddenDate">
+        <h6><strong>Select the type of date and date range to narrow down this product trace</strong></h6>
+        <mdb-card>
+          <mdb-card-body style=" min-height: 350px;
+          height: auto !important;
+          height: 350px;">
+            <mdb-card-title>
+              <h5>Date type</h5>
+            </mdb-card-title>
+            <mdb-card-text>
+              <div class="md-form">
+                <div class="row">
+                  <!-- Grid column -->
+                  <div class="col-12 text-center">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <button mdbBtn type="button" color="light" size="sm" class="waves-light" mdbWavesEffect (click)="creation()">Creation</button>
+                      <button mdbBtn type="button" color="light" size="sm" class="waves-light" mdbWavesEffect (click)="expiration()">Expiration</button>
+                    </div>
+                    <br>
+
+                  </div>
+
+                  <div class="col-12" [hidden]="hiddenCreation">
+                    <label for="form1">Creation date</label>
+                    <div class="md-form row">
+                      <input mdbInputDirective type="Date" placeholder="Creation date" id="form1" class="w-75 form-control">
+                      <i style="color:#00838F" class="fas fa-chevron-circle-right fa-2x m-2" (click)="byDate('date')"></i>
+                    </div>
+                  </div>
+                  <div class="col-12" [hidden]="hiddenExpiration">
+                    <label for="form2">Expiration date</label>
+                    <div class="md-form row">
+                      <input mdbInputDirective type="Date" placeholder="Creation date" id="form2" class="w-75 form-control">
+                      <i style="color:#00838F" class="fas fa-chevron-circle-right fa-2x m-2" (click)="byDate('date')"></i>
+                    </div>
+                  </div>
+                  <div class="col-12 text-right m-0">
+                    <i style="color:#00838F" (click)="info1()" class="fas fa-exclamation-circle fa-1x m-2"></i>
+                  </div>
+                  <div class="col-12 text-justify" [hidden]="hiddenInfo1">
+                    <p>Using date is one way to scope the trace to be around the date specified. After choosing the
+                      type of date, you will be able to give the date range for the trace</p>
+                    <p>Please note that it is possible the product youwant to trace may not ...</p>
+                  </div>
+                </div>
+              </div>
+
+            </mdb-card-text>
+
+          </mdb-card-body>
+        </mdb-card>
+      </div>
+      <div class="col-lg-4 text-center " [hidden]="hiddenPacking">
+        <h6><strong>Select a specific lot, serial or pallet numbers, please type them below</strong></h6>
+        <mdb-card>
+          <mdb-card-body>
+            <mdb-card-title>
+              <h5>Packing identification numbre</h5>
+            </mdb-card-title>
+            <mdb-card-text>
+              <div class="md-form">
+                <div class="row">
+                  <!-- Grid column -->
+                  <div class="col-12">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <button mdbBtn type="button" color="light" size="sm" class="waves-light" mdbWavesEffect (click)="labelNumber = 'Enter lot number here'">Lot
+                        #</button>
+                      <button mdbBtn type="button" color="light" size="sm" class="waves-light" mdbWavesEffect (click)="labelNumber = 'Enter serial number here'">Serial
+                        #</button>
+                      <button mdbBtn type="button" color="light" size="sm" class="waves-light" mdbWavesEffect (click)="labelNumber = 'Enter palet number here'">Pallet
+                        #</button>
+                    </div>
+                  </div>
+                  <div class="col-12 text-right">
+                    <div class="md-form row">
+                      <input mdbInputDirective type="number" id="number" class="w-75 form-control">
+                      <label for="number" class="">{{labelNumber}}</label>
+                      <i style="color:#00838F" class="fas fa-chevron-circle-right fa-2x m-2" (click)="byDate('date')"></i>
+                    </div>
+
+                    <i style="color:#00838F" class="fas fa-exclamation-circle fa-1x m-2" (click)="info2()"></i>
+                  </div>
+                  <div class="col-12 text-justify" [hidden]="hiddenInfo2">
+                    <p>
+                      Dependig on how the product is packed and recorded along the supply chain, you my be able to use
+                      a particular packing identification as a way to trace a product.</p>
+                  </div>
+                </div>
+              </div>
+            </mdb-card-text>
+          </mdb-card-body>
+        </mdb-card>
+      </div>
+      <!-- Lots, palletas and serial number-->
+      <div class="col-lg-3 text-center my-0 " [hidden]="hiddenLots">
+        <h6><strong><br><br> </strong></h6>
+        <mdb-card>
+          <mdb-card-body>
+            <mdb-card-title>
+              <h5>Lots</h5>
+            </mdb-card-title>
+            <mdb-card-text>
+              <h3>3</h3>
+              <br>
+              <table style="font-size: 6px" class="table">
+                <thead>
+                  <tr>
+                    <th>Lots number found</th>
+                    <th>Production date
+                    </th>
+                    <th>Expiration date </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row"> <input type="checkbox" name="" id="" checked autocomplete="off">4444444</td>
+                    <td>02/08/2016</td>
+                    <td>04/01/2019</td>
+                  </tr>
+                  <tr>
+                    <td scope="row"> <input type="checkbox" name="" id="" autocomplete="off">4444444</td>
+                    <td>02/08/2016</td>
+                    <td>04/01/2019</td>
+                  </tr>
+                  <tr>
+                    <td scope="row"> <input type="checkbox" name="" id="" autocomplete="off">4444444</td>
+                    <td>02/08/2016</td>
+                    <td>04/01/2019</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </mdb-card-text>
+          </mdb-card-body>
+        </mdb-card>
+      </div>
+      <div class="col-lg-2 text-center my-0" [hidden]="hiddenPallets">
+        <h6><strong> <br><br> </strong></h6>
+        <mdb-card>
+          <mdb-card-body>
+            <mdb-card-title>
+              <h5>Pallets</h5>
+            </mdb-card-title>
+            <mdb-card-text>
+              <h3>2</h3>
+              <div>
+                <label>
+                  <input type="checkbox" name="" id="" checked autocomplete="off">
+                  000001
+                </label>
+                <label>
+                  <input type="checkbox" name="" id="" autocomplete="off">
+                  000002
+                </label>
+
+              </div>
+            </mdb-card-text>
+          </mdb-card-body>
+        </mdb-card>
+      </div>
+      <div class="col-lg-3 text-center my-0" [hidden]="hiddenSerial">
+        <h6><strong> <br><br> </strong></h6>
+        <mdb-card>
+          <mdb-card-body>
+            <mdb-card-title>
+              <h5>Serial number</h5>
+            </mdb-card-title>
+            <mdb-card-text>
+              <h3>180</h3>
+              <div class="md-form ">
+                <input mdbInputDirective type="text" id="number_serial" class="w-100 form-control">
+                <label for="number_serial" class="">Type in serial number</label>
+              </div>
+            </mdb-card-text>
+          </mdb-card-body>
+        </mdb-card>
+      </div>
+    </div>
+  </div>
+  <!-- Grid row -->
+
+</section>
+<!-- Section: Blog v.1 -->
+<app-footer></app-footer>

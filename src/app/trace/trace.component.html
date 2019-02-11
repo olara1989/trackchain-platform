@@ -1,6 +1,260 @@
-
 <app-header></app-header>
-<p>
-  trace works!
-</p>
+<!-- Section: Blog v.1 -->
+<section class="my-1">
+  <!-- Grid row -->
+  <div class="container blue-grey lighten-5 py-1">
+    <div class="row  m-2 mt-1">
+      <!-- Grid column -->
+      <div class="col-lg-1 cyan darken-3">
+        <!-- Featured image -->
+        <i class="fas fa-apple-alt fa-2x text-white m-2"></i>
+      </div>
+      <!-- Grid column -->
+      <!-- Grid column -->
+      <div class="col-lg-8 pt-3">
+        <!-- Category -->
+        <!-- Post title -->
+        <span class="align-bottom display-5"><strong>Start your trace with products</strong></span>
+        <!-- Excerpt -->
+      </div>
+      <div class="col-lg-3">
+        <!-- Category -->
+        <!-- Post title -->
+        <button mdbBtn type="button" color="info" mdbWavesEffect><i class="fas fa-code-branch fa-2x text-white"></i>
+          Trace</button>
+        <!-- Excerpt -->
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-lg-12">
+        <ul class="stepper stepper-horizontal">
+          <!-- First Step -->
+          <li class="completed">
+            <a href="">
+              <span class="circle">1</span>
+              <span class="label">Select a product</span>
+            </a>
+          </li>
+          <!-- Second Step -->
+          <li class="disabled">
+            <a href="">
+              <span class="circle"></span>
+              <span class="label"></span>
+            </a>
+          </li>
+          <!-- Third Step -->
+          <li class="disabled">
+            <a href="">
+              <span class="circle"></span>
+              <span class="label"></span>
+            </a>
+          </li>
+          <!-- Third Step -->
+          <li class="disabled">
+            <a href="">
+              <span class="circle"></span>
+              <span class="label"></span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="col-lg-12">
+        <p class="text-center">Select products to trace using <a href="" class="text-info"> one of the boxes
+            below:</a></p>
+      </div>
+      <div class="col-lg-4 " [hidden]="isHidden1">
+        <mdb-card>
+          <mdb-card-body>
+            <mdb-card-title>
+              <h5>Product indetification number</h5>
+            </mdb-card-title>
+            <mdb-card-text>
+              <div class="md-form">
+                <div class="row">
+                  <!-- Grid column -->
+                  <div class="col-10">
+                    <input mdbInputDirective type="text" id="id_trackchain" class="form-control">
+                    <label for="id_trackchain" class="">See informaton</label>
+                  </div>
+                  <div class="col-2">
+                    <i style="color:#00838F" class="fas fa-chevron-circle-right fa-2x m-2" (click)="find1()"></i>
+                    <i style="color:#00838F" class="fas fa-exclamation-circle fa-1x m-2" (click)="info1()"></i>
+                  </div>
+                  <div class="col-12" [hidden]="hiddenInfo1">
+                    <span>One of the following identifications is
+                      acceptable</span>
+                    <ul>
+                      <li>Cras justo odio</li>
+                      <li>Dapibus ac facilisis in</li>
+                      <li>Morbi leo risus</li>
+                      <li>Porta ac consectetur ac</li>
+                      <li>Vestibulum at eros</li>
+                    </ul>
+                  </div>
+                  <div class="col-12" [hidden]="hiddenList1">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Fesh Produc inc.
+                        <br>
+                        12233445566778123.0002135
+                        <br>
+                        Strudel, Apple
+                        <a href="trace-step2"><span class="badge badge-info badge-pill">view</span> </a> 
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Fesh Produc inc.
+                        <br>
+                        12233445566778123.0002135
+                        <br>
+                        Strudel, Apple
+                        <a href="trace-step2"><span class="badge badge-info badge-pill">view</span> </a> 
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Fesh Produc inc.
+                        <br>
+                        12233445566778123.0002135
+                        <br>
+                        Strudel, Apple
+                        <a href="trace-step2"><span class="badge badge-info badge-pill">view</span> </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </mdb-card-text>
+
+          </mdb-card-body>
+        </mdb-card>
+      </div>
+      <div class="col-lg-4 " [hidden]="isHidden2">
+        <mdb-card>
+          <mdb-card-body>
+            <mdb-card-title>
+              <h5>Product label</h5>
+            </mdb-card-title>
+            <mdb-card-text>
+              <div class="md-form">
+                <div class="row">
+                  <!-- Grid column -->
+                  <div class="col-10">
+                    <input mdbInputDirective type="text" id="form1" class="form-control">
+                    <label for="form1" class="">Enter product label</label>
+                  </div>
+                  <div class="col-2">
+                    <i style="color:#00838F" class="fas fa-chevron-circle-right fa-2x m-2" (click)="find2()"></i>
+                    <i style="color:#00838F" class="fas fa-exclamation-circle fa-1x m-2" (click)="info2()"></i>
+                  </div>
+                  <div class="col-12" [hidden]="hiddenInfo2">
+                    <span><i style="color:#00838F" class="fas fa-exclamation-circle fa-1x m-2"></i>
+                      Start typing and we will help you narrow down as you type</span>
+                  </div>
+                  <div class="col-12" [hidden]="hiddenList2">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Fesh Produc inc.
+                        <br>
+                        12233445566778123.0002135
+                        <br>
+                        Strudel, Apple
+                        <a href="trace-step2"><span class="badge badge-info badge-pill">view</span> </a>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Fesh Produc inc.
+                        <br>
+                        12233445566778123.0002135
+                        <br>
+                        Strudel, Apple
+                        <a href="trace-step2"><span class="badge badge-info badge-pill">view</span> </a>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Fesh Produc inc.
+                        <br>
+                        12233445566778123.0002135
+                        <br>
+                        Strudel, Apple
+                        <a href="trace-step2"><span class="badge badge-info badge-pill">view</span> </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </mdb-card-text>
+          </mdb-card-body>
+        </mdb-card>
+      </div>
+      <div class="col-lg-4 " [hidden]="isHidden3">
+        <mdb-card>
+          <mdb-card-body>
+            <mdb-card-title>
+              <h5>Purchase order</h5>
+            </mdb-card-title>
+            <mdb-card-text>
+              <div class="md-form">
+                <div class="row">
+                  <!-- Grid column -->
+                  <div class="col-10">
+                    <input mdbInputDirective type="text" id="form2" class="form-control">
+                    <label for="form2" class="">Enter P.O. number</label>
+                  </div>
+                  <div class="col-2">
+                    <i style="color:#00838F" class="fas fa-chevron-circle-right fa-2x m-2" (click)="find3()"></i>
+                    <i style="color:#00838F" class="fas fa-exclamation-circle fa-1x m-2" (click)="info3()"></i>
+                  </div>
+                  <div class="col-12" [hidden]="hiddenInfo3">
+                    <span>
+                      If you want to track specificaly the lot number of a product shipped for a purchase order.</span>
+                    <p>If you do not have an exact date for the P.O. enter a date or a date range <b>when the P.O was
+                        issued</b></p>
+                    <div class="md-form input-group">
+                      <input type="date" aria-label="First name" class="form-control" placeholder="Start date">
+                      <input type="date" aria-label="Last name" class="form-control" placeholder="End date">
+                      <i style="color:#00838F" class="fas fa-calendar-alt fa-1x m-2"></i>
+                    </div>
+                  </div>
+                  <div class="col-12" [hidden]="hiddenList3">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Fesh Produc inc.
+                        <br>
+                        12233445566778123.0002135
+                        <br>
+                        Strudel, Apple
+                        <a href="trace-step2"><span class="badge badge-info badge-pill">view</span> </a>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Fesh Produc inc.
+                        <br>
+                        12233445566778123.0002135
+                        <br>
+                        Strudel, Apple
+                        <a href="trace-step2"><span class="badge badge-info badge-pill">view</span> </a>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Fesh Produc inc.
+                        <br>
+                        12233445566778123.0002135
+                        <br>
+                        Strudel, Apple
+                        <a href="trace-step2"><span class="badge badge-info badge-pill">view</span> </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </mdb-card-text>
+          </mdb-card-body>
+        </mdb-card>
+      </div>
+    </div>
+  </div>
+  <!-- Grid row -->
+
+</section>
+<!-- Section: Blog v.1 -->
 <app-footer></app-footer>

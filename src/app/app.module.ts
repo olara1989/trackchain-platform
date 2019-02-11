@@ -17,6 +17,8 @@ import { OnboardingComponent } from './onboarding/onboarding.component';
 import { AccountComponent } from './account/account.component';
 import { FooterComponent } from './footer/footer.component';
 import { AccountSummaryComponent } from './account-summary/account-summary.component';
+import { TraceStep1Component } from './trace/trace-step1/trace-step1.component';
+import { TraceStep2Component } from './trace/trace-step2/trace-step2.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AccountSummaryComponent } from './account-summary/account-summary.compo
     OnboardingComponent,
     AccountComponent,
     FooterComponent,
-    AccountSummaryComponent
+    AccountSummaryComponent,
+    TraceStep1Component,
+    TraceStep2Component
   ],
   imports: [
     BrowserModule,

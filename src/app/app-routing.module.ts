@@ -11,7 +11,9 @@ import { UserManagerComponent } from './user-manager/user-manager.component';
 import { DataComponent } from './data/data.component';
 import { OnboardingComponent } from './onboarding/onboarding.component';
 import { AccountComponent } from './account/account.component';
+import { TraceStep1Component} from'./trace/trace-step1/trace-step1.component';
 import { AppComponent } from './app.component';
+import { TraceStep2Component } from './trace/trace-step2/trace-step2.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
@@ -23,10 +25,12 @@ const routes: Routes = [
   { path: 'user-manager', component: UserManagerComponent },
   { path: 'data', component: DataComponent },
   { path: 'onboarding', component: OnboardingComponent },
-  { path: 'account', component: AccountComponent }  
+  { path: 'account', component: AccountComponent },  
+  { path: 'trace-step2', component: TraceStep1Component } , 
+  { path: 'trace-step3', component: TraceStep2Component }  
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports:[RouterModule]
+exports:[RouterModule]
 })
 export class AppRoutingModule { }
